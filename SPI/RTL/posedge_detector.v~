@@ -1,0 +1,19 @@
+module posedge_detector(input clk,
+input rstn,
+input sclk,
+output sclk_posedge);
+
+reg Q;
+always @(posedge clk)
+begin
+if(!rstn)
+Q<=0;
+else
+Q<=sclk;
+
+end
+
+assign sclk_posedge = sclk & (~ Q);
+
+endmodule
+

@@ -1,0 +1,47 @@
+module tb_shift_reg;
+  reg clk;
+  reg rstn;
+  reg shift_en;
+  reg data_in;
+  wire [7:0] data_out;
+  
+  shift_reg_n #(.data_width(8)) dut1(.clk(clk),
+                           .rstn(rstn),
+                           .data_in(data_in),
+                           .shift_en(shift_en),
+                           .data_out(data_out));
+  
+  
+  initial begin
+    
+
+    clk<=1;
+    rstn<=0;
+    shift_en<=0;
+    data_in<='b0;
+    
+    repeat (5) begin
+      
+    #10 rstn<=1;
+      
+    shift_en<=1;
+    data_in<=1;
+      
+    #10 data_in<=1;
+    #10 data_in<=1;
+    #10 data_in<=1;
+    #10 data_in<=1;
+    #10 rstn<=0;
+    shift_en<=0;
+      
+    end
+
+    
+  end
+  
+  always #5 clk=~clk;
+                
+  initial #300 $finish;
+  
+  
+endmodule

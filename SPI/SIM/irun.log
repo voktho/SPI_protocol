@@ -1,0 +1,23 @@
+irun: 10.20-s100: (c) Copyright 1995-2011 Cadence Design Systems, Inc.
+TOOL:	irun	10.20-s100: Started on Feb 03, 2023 at 12:53:21 BDT
+irun
+	-f sim.f
+		..//RTL/*.v
+		..//TB/Top_tb.sv
+	-gui
+	-access +rwc
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> source /home/buet/cadence/installs/INCISIV102/tools/inca/files/ncsimrc
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm top_tb.clk top_tb.data_in top_tb.i top_tb.miso top_tb.mosi top_tb.rstn top_tb.sclk top_tb.ss
+Created probe 1
+ncsim> run
+Simulation complete via $finish(1) at time 935 NS + 0
+../TB/Top_tb.sv:38 #200 $finish;
+ncsim> ^C
+ncsim> exit
+TOOL:	irun	10.20-s100: Exiting on Feb 03, 2023 at 13:01:36 BDT  (total: 00:08:15)

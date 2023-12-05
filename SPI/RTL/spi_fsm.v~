@@ -1,0 +1,100 @@
+module spi_fsm(input clk,
+input rstn,
+input ss,
+input bit_count_eql_8,
+input sclk_posedge,
+output reg bit_clear,
+output reg shift_en,
+output reg bit_incr,
+output reg transaction
+);
+
+
+reg [1:0] pstate,nstate;
+parameter [1:0] IDLE=2'b00,Transfer=2'b01,Finish=2'b10,WAIT_SS_HIGH=2'b11;
+
+
+//pstate
+
+always @(posedge clk,negedge rstn)
+begin
+    if(!rstn)
+    pstate <= IDLE;
+    else
+    pstate <= nstate;
+end
+
+
+//nstate
+
+always @(*)
+    begin
+    casez(pstate)
+    IDLE: nstate = ss?IDLE:Transfer;
+    Transfer: nstate = bit_count_eql_8?Finish:Transfer;
+    Finish: nstate = ss?IDLE:WAIT_SS_HIGH;
+    WAIT_SS_HIGH: nstate = ss?IDLE:WAIT_SS_HIGH;
+    default: nstate = 2'bxx;
+    
+    endcase
+    
+    end
+
+
+
+
+
+//output
+
+always @(*)
+begin
+    casez(pstate)
+    IDLE: begin
+          bit_clear = 1;
+          shift_en = 0;
+          bit_incr = 0;
+          transaction = 0;
+          
+              
+          end
+          
+    Transfer: begin
+        
+          bit_clear = 0;
+          shift_en = sclk_posedge;
+          bit_incr = sclk_posedge;
+          transaction = 0;
+          
+    end
+    
+    
+    
+    Finish: begin
+          bit_clear = 1;
+          shift_en = 0;
+          bit_incr = 0;
+          transaction = 1;
+    end
+    
+    WAIT_SS_HIGH: begin
+          bit_clear = 1;
+          shift_en = 0;
+          bit_incr = 0;
+          transaction = 0;
+    end
+    
+    
+    
+    
+    
+    
+    endcase
+    
+end
+
+
+
+
+
+endmodule
+

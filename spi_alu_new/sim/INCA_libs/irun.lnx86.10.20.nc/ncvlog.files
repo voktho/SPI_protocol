@@ -1,0 +1,14 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+/home/buet/exchange/Digital_Design/spi_alu_new/rtl/alu.v
+/home/buet/exchange/Digital_Design/spi_alu_new/rtl/alu_controller.v
+/home/buet/exchange/Digital_Design/spi_alu_new/rtl/alu_top.v
+/home/buet/exchange/Digital_Design/spi_alu_new/rtl/comparator.v
+/home/buet/exchange/Digital_Design/spi_alu_new/rtl/counter.v
+/home/buet/exchange/Digital_Design/spi_alu_new/rtl/posedge_detector.v
+/home/buet/exchange/Digital_Design/spi_alu_new/rtl/shift_reg.v
+/home/buet/exchange/Digital_Design/spi_alu_new/rtl/spi_controller.v
+/home/buet/exchange/Digital_Design/spi_alu_new/rtl/spi_slave.v
+/home/buet/exchange/Digital_Design/spi_alu_new/test/alu_top_tb.sv

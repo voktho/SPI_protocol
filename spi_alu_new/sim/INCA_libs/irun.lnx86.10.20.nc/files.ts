@@ -1,0 +1,10 @@
+1674804196 /home/buet/exchange/Digital_Design/spi_alu_new/rtl/alu.v
+1675412914 /home/buet/exchange/Digital_Design/spi_alu_new/rtl/alu_controller.v
+1676054706 /home/buet/exchange/Digital_Design/spi_alu_new/rtl/alu_top.v
+1674804088 /home/buet/exchange/Digital_Design/spi_alu_new/rtl/comparator.v
+1676054173 /home/buet/exchange/Digital_Design/spi_alu_new/rtl/counter.v
+1674804126 /home/buet/exchange/Digital_Design/spi_alu_new/rtl/posedge_detector.v
+1674804136 /home/buet/exchange/Digital_Design/spi_alu_new/rtl/shift_reg.v
+1676054085 /home/buet/exchange/Digital_Design/spi_alu_new/rtl/spi_controller.v
+1676054489 /home/buet/exchange/Digital_Design/spi_alu_new/rtl/spi_slave.v
+1676060441 /home/buet/exchange/Digital_Design/spi_alu_new/test/alu_top_tb.sv

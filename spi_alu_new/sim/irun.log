@@ -1,0 +1,53 @@
+irun: 10.20-s100: (c) Copyright 1995-2011 Cadence Design Systems, Inc.
+TOOL:	irun	10.20-s100: Started on Feb 11, 2023 at 02:24:54 BDT
+irun
+	-f filelist.f
+		../rtl/*.v
+		../test/alu_top_tb.sv
+	-gui
+	-access +rwc
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		alu_top_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.alu_top:v <0x0158058e>
+			streams:   5, words:   608
+		worklib.alu_top_tb:sv <0x05d43fd5>
+			streams:  19, words:  6023
+		worklib.counter:v <0x03fa13ed>
+			streams:   2, words:   517
+		worklib.spi_fsm:v <0x440bb170>
+			streams:   3, words:  1938
+		worklib.spi_slave:v <0x56a3a233>
+			streams:   3, words:   305
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:             11      10
+		Registers:           31      30
+		Scalar wires:        21       -
+		Expanded wires:      20       1
+		Vectored wires:       9       -
+		Always blocks:       10       9
+		Initial blocks:       4       4
+		Cont. assignments:    4       4
+		Pseudo assignments:  11      11
+	Writing initial simulation snapshot: worklib.alu_top_tb:sv
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> source /home/buet/cadence/installs/INCISIV102/tools/inca/files/ncsimrc
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm alu_top_tb.clk alu_top_tb.ss alu_top_tb.sclk alu_top_tb.data_sent alu_top_tb.data_received alu_top_tb.mosi alu_top_tb.miso alu_top_tb.reset_n alu_top_tb.opcode alu_top_tb.a alu_top_tb.b
+Created probe 1
+ncsim> run
+Simulation complete via $finish(1) at time 357 NS + 0
+../test/alu_top_tb.sv:55 		$finish;
+ncsim> ^C
+ncsim> exit
+TOOL:	irun	10.20-s100: Exiting on Feb 11, 2023 at 02:51:01 BDT  (total: 00:26:07)

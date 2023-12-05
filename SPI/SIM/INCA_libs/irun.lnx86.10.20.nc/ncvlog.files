@@ -1,0 +1,11 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+/home/buet/Digital_Design/SPI/RTL/comparator.v
+/home/buet/Digital_Design/SPI/RTL/counter.v
+/home/buet/Digital_Design/SPI/RTL/posedge_detector.v
+/home/buet/Digital_Design/SPI/RTL/shift_reg.v
+/home/buet/Digital_Design/SPI/RTL/spi_fsm.v
+/home/buet/Digital_Design/SPI/RTL/top_spi.v
+/home/buet/Digital_Design/SPI/TB/Top_tb.sv

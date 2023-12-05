@@ -1,0 +1,13 @@
+$date
+    Feb 10, 2023  12:19:30
+$end
+$version
+    TOOL:	ncsim	10.20-s100
+$end
+$timescale
+    1 fs
+$end
+$enddefinitions $end
+#357000000
+$dumpvars
+$end

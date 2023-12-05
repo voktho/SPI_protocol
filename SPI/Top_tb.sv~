@@ -1,0 +1,46 @@
+module top_tb;
+reg clk;
+reg rstn;
+reg ss;
+reg sclk;
+reg  mosi;
+wire miso;
+
+top_spi dut(
+.clk(clk),
+.rstn(rstn),
+.ss(ss),
+.sclk(sclk),
+.mosi(mosi),
+.miso(miso));
+
+
+initial begin
+
+clk<=0;
+rstn<=0;
+ss<=1;
+mosi<=0;
+
+@(posedge clk);
+rstn<=1;
+
+    repeat(2)
+    @(posedge clk);
+    ss<=0;
+    repeat(5) begin
+    repeat(2)
+    @(posedge clk);
+    sclk<=1;
+    mosi<=$random;
+    repeat(2)
+    @(posedge clk);
+    sclk<=0;
+    end
+    $finish;
+    end
+always #5 clk=~clk;
+
+            
+endmodule
+
